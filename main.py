@@ -11,7 +11,7 @@ class_names=np.genfromtxt('class_names.csv',delimiter=',',dtype='str')
 def main():
     st.title('Know your dog\'s breed')
     st.header('Description:')
-    st.write('This streamlit app is used for predicting dog\'s breed with deep learning model. The model was made using transfer learning from Xception pretrained model and retrained/tuned on StanfordDogs dataset. It reached 84% TOP 1 accuracy and 97% TOP 5 accuracy on test set.')
+    st.write('This streamlit app is used for predicting a dog\'s breed with deep learning model. The model was made using transfer learning from Xception pretrained model and retrained/tuned on StanfordDogs dataset. It reached 84% TOP 1 accuracy and 97% TOP 5 accuracy on the test set.')
     st.write('You can find the whole project on my [repo](https://github.com/zakaria-narjis/Know-your-dog-s-breed).')
     st.header('Dog breed classification:')
     load_image()
