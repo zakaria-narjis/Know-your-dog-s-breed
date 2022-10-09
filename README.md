@@ -1,2 +1,2 @@
 # Know-your-dog-s-breed
-Deep learning project on dogs breed classification using transfer learning from Xception pretrained model trained/tunned on StanfordDogs dataset
+A deep learning project on dog breed classification using transfer learning from Xception pretrained model trained/ tuned on StanfordDogs dataset
