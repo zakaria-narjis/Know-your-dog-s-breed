@@ -11,8 +11,8 @@ class_names=np.genfromtxt('class_names.csv',delimiter=',',dtype='str')
 def main():
     st.title('Know your dog\'s breed')
     st.header('Description:')
-    st.text('This streamlit app is used for predicting dog\'s breed using deep learning model.')
-    st.text('The model was made using transfer learning from Xception pretrained model and trained/tuned on StanfordDogs dataset.')
+    st.write('This streamlit app is used for predicting dog\'s breed with deep learning model. The model was made using transfer learning from Xception pretrained model and retrained/tuned on StanfordDogs dataset. It reached 84% TOP 1 accuracy and 97% TOP 5 accuracy on test set.')
+    st.write('You can find the whole project on my [repo](https://github.com/zakaria-narjis/Know-your-dog-s-breed).')
     st.header('Dog breed classification:')
     load_image()
 
@@ -31,10 +31,10 @@ def load_image():
         top5_data=pd.DataFrame(data=data_)
         st.table(top5_data)
 def predict(image):
-    image=Image.open(io.BytesIO(image))
+    image=Image.open(io.BytesIO(image)).convert('RGB')
     img_to_tensor = tf.keras.preprocessing.image.img_to_array(image)
     img=preprocess(img_to_tensor)
-    prediction = model(img.numpy().reshape(1, 224, 224, 3), training=False)
+    prediction = model(img.numpy().reshape(1, 299, 299, 3), training=False)
     top1_class=(class_names[np.argmax(prediction.numpy()[0])],np.amax(prediction))
     top5_class =[]
     for index in np.argpartition(prediction.numpy()[0], -5)[-5:]:
@@ -42,8 +42,8 @@ def predict(image):
     return top1_class,top5_class
 
 def preprocess(image):
-    resized_image = tf.image.resize(image, [224, 224])
-    final_image = keras.applications.resnet50.preprocess_input(resized_image)
+    resized_image = tf.image.resize(image, [299, 299])
+    final_image = keras.applications.xception.preprocess_input(resized_image)
     return final_image
 
 if __name__=='__main__':
