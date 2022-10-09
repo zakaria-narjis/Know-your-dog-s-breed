@@ -25,8 +25,8 @@ def load_image():
         st.subheader('Your dog\'s breed TOP 1 prediction:')
         st.write(f'{top1[0]} , Probability of {top1[1]*100} %')
         st.subheader('Your dog\'s breed TOP 5 prediction:')
-        '''for label in top5:
-            st.write(f'{label[0]} , Probability of {label[1] * 100} %')'''
+        #for label in top5:
+            #st.write(f'{label[0]} , Probability of {label[1] * 100} %')
         data_={'Label':[class_[0] for class_ in top5], 'Probability %': [class_[1]*100 for class_ in top5]}
         top5_data=pd.DataFrame(data=data_)
         st.table(top5_data)
