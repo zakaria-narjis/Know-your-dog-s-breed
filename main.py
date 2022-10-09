@@ -6,7 +6,7 @@ from tensorflow import keras
 from PIL import Image
 import io
 
-model= keras.models.load_model('dog_classif_model.h5')
+model= keras.models.load_model('dog_classif_model.h5',compile=False)
 class_names=np.genfromtxt('class_names.csv',delimiter=',',dtype='str')
 def main():
     st.title('Know your dog\'s breed')
