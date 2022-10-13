@@ -8,6 +8,6 @@ The model accuracy on test set:
 
 # Streamlit App
 You can find the application hosted 
-https://zakaria-narjis-know-your-dog-s-breed-main-kbkgaf.streamlitapp.com/
+https://know-your-dogs-breed.streamlitapp.com/
 ![image](https://user-images.githubusercontent.com/67557885/194771939-cb7ae087-5d75-496b-b9c1-d670dc6c4440.png)
 
