@@ -5,7 +5,6 @@ import tensorflow as tf
 from tensorflow import keras
 from PIL import Image
 import io
-#tacos
 model= keras.models.load_model('dog_classif_model.h5',compile=False)
 class_names=np.genfromtxt('class_names.csv',delimiter=',',dtype='str')
 def main():
